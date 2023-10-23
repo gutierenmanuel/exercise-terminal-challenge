@@ -1,14 +1,12 @@
 {
-	"title" : "Command Line Challenge",
-	"slug" : "exercise-terminal-challenge",
-	"status": "published",
-	"translations": ["es", "en"],
-	"difficulty": "beginner",
-	"duration" : 2,
-	"description" : "This command line challenge is designed to make you become familiar with the bash/command line. The challenge goes over the most used commands every developer needs to know, in order to succeed in real life.",
-	"preview": "https://raw.githubusercontent.com/breatheco-de/exercise-terminal-challenge/master/preview.png",
-	"technologies": ["terminal", "cmd", "bash"],
-	"autoPlay": false,
-    	"projectType": "project",
-	"delivery_formats": "no_delivery"
+    "language": "python3",
+    "slug": "realestate-datacleanup-exercise",
+    "title": "Real Estate Data Cleanup",
+    "repository": "https://github.com/4GeeksAcademy/realstate-datacleanup-exercise",
+    "preview": "https://github.com/4GeeksAcademy/realestate-datacleanup-exercise/blob/main/assets/preview.jpeg?raw=true",
+    "description": "Prepare a real dataset to later train a machine learning model",
+    "duration": 3,
+    "difficulty": "easy",
+    "projectType": "project",
+    "video-solutions": false
 }
