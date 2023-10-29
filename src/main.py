@@ -1,11 +1,14 @@
 # Obligatorio: Generar una tabla usando Python con TODOS los ficheros (recursivamente) del workspace que contenga el nombre del fichero, el peso REAL y la última fecha de modificación.
 
-
 import os
 import pandas as pd
 import datetime
 
+# Route in codespace
 main_route = '/workspaces/exercise-terminal-challenge'
+
+# Route in local 
+# main_route = '/home/tr4shhh/Proyects/4geeks/08 - ML Ops/exercise-terminal-challenge'
 
 #------------------
 def list_recursive_files(route):
@@ -54,6 +57,21 @@ def get_date_modification(files):
 
 #------------------
 
+def get_date_created(files):
+    dates = []
+    for file in files:
+        # Get the date modified 
+        date_modification = os.path.getctime(file)
+
+        #Change the format of the date
+        modification_time = datetime.datetime.fromtimestamp(date_modification)
+        formatted_date = modification_time.strftime('%d-%m-%Y %H:%M:%S')
+
+        dates.append(formatted_date)
+    return dates
+
+
+#------------------
 
 
 #Make the list of all files
@@ -63,19 +81,20 @@ all_files = list_recursive_files(main_route)
 size_files = get_size(all_files)
 
 # Save the date modification of the file
-all_dates= get_date_modification(all_files)
+modified_dates= get_date_modification(all_files)
+
+### In unix the Creation date is not stored in its metadata
+
+# Save the date modification of the file
+# created_dates= get_date_created(all_files)
 
 
 pandas_files = {'Files': all_files,
                 'Size': size_files,
-                'Date Modified': all_dates}
+#                'Date Created': created_dates,
+                'Date Modified': modified_dates}
+
 
 data_pandas = pd.DataFrame(pandas_files)
 
 print(data_pandas)
-
-
-
-
-
-# Opcional: Hacer lo mismo que en la línea anterior pero en Bash Scripting y exportando un CSV
