@@ -83,7 +83,7 @@ size_files = get_size(all_files)
 # Save the date modification of the file
 modified_dates= get_date_modification(all_files)
 
-### In unix the Creation date is not stored in its metadata
+### In unix the Creation date is not stored in its metadata!
 
 # Save the date modification of the file
 # created_dates= get_date_created(all_files)
